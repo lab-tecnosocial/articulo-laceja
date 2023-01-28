@@ -18,9 +18,32 @@
                         opacity: 1;
                         transition: opacity 1s ease-in-out;
                 }
-                img {
-                        width: 600px;
+
+                .lado {
+                        position: -webkit-sticky;
+			position: sticky;
+			width: 100%;
+			margin: 0;
+			-webkit-transform: translate3d(0, 0, 0);
+			-moz-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+			background-color: #8a8a8a;
+			z-index: 0;
                 }
+
+                .centro {
+                        position: -webkit-sticky;
+			position: sticky;
+			left: 0;
+			width: 100%;
+			margin: 0;
+			-webkit-transform: translate3d(0, 0, 0);
+			-moz-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+			background-color: #8a8a8a;
+			z-index: 0;
+                }
+
                 
 
         </style>
@@ -318,13 +341,17 @@
                         .onStepEnter((response) => {
                                 const { element, index, direction } = response;
                                 element.classList.add("is-active");
+
                         })
                         .onStepExit((response) => {
                                 const { element, index, direction } = response;
                                 element.classList.remove("is-active");
+
                         });
                 
                 window.addEventListener("resize", scroller.resize);
+
+
 
         </script>
 </body>
