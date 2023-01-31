@@ -8,7 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <style>
-    
+        @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+            background-color: #fff;
+        }
+        
         
         #intro {
             height: 100vh;
@@ -100,13 +109,16 @@
             width: 400px;
             height: 200px;
             margin: 2rem auto;
-            border: 1px solid #8a8a8a;
+            background: rgba(255, 255, 255, 0.9) ;
+            padding: 1.25em;
+            border-radius: 10px;
+            box-shadow: rgb(0 0 0 / 20%) 0px 0px 10px;
         }
 
         .step p {
             text-align: center;
             padding: 1rem;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
         }
 
         .step.is-active {
