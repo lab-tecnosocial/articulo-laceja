@@ -1,171 +1,224 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Título de página</title>
-    <link rel="stylesheet" href="style2.css" />
-    <script src="https://unpkg.com/scrollama"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Titulo de la pagina</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <style>
-        #scrolly1 {
-            position: relative;
-            background-color: #f3f3f3;
-            padding: 1rem;
-          }
+        #intro {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-image: url(img/door.png);
+            margin: 1rem auto;
+            text-align: center;
+            color: white;
+        }
 
-          #scrolly2 {
-            position: relative;
-            background-color: #f3f3f3;
-            padding: 1rem;
-          }
+        #cinta {
+            background-color: rgba(0, 0, 0, 0.564);
+            width: 100%;
+        }
 
-    
-          article {
+        #outro {
+            height: 600px;
+        }
+
+        .scrollyCentro {
+            position: relative;
+            padding: 1rem;
+
+        }
+
+        .scrollyLado {
+            position: relative;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            padding: 1rem;
+        }
+
+
+        article {
             position: relative;
             padding: 0;
             max-width: 20rem;
             margin: 0 auto;
-          }
-    
-          .centro {
-            position: -webkit-sticky;
-			position: sticky;
-			left: 0;
-			width:600px;
-			margin: 0;
-			-webkit-transform: translate3d(0, 0, 0);
-			-moz-transform: translate3d(0, 0, 0);
-			transform: translate3d(0, 0, 0);
-			background-color: #8a8a8a;
-			z-index: 0;
-          }
+        }
 
-          /* center the image */
-            .centro img {
-           
-            }
-            
-    
-          .step {
-            margin: 0 auto 2rem auto;
-            color: #fff;
-            background-color: rgba(0, 0, 0, 0.1);
-          }
-    
-          .step:last-child {
-            margin-bottom: 0;
-          }
-    
-          .step.is-active p {
-            background-color: goldenrod;
-            color: #3b3b3b;
-          }
-    
-          .step p {
+        .center {
+            position: -webkit-sticky;
+            position: sticky;
+            left: 0;
+            width: 100%;
+            margin: 0;
+            z-index: 0;
+            top: 12.5vh;
+            height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lado {
+            position: -webkit-sticky;
+            position: sticky;
+            width: 100%;
+            margin: 0;
+            z-index: -1;
+            top: 12.5vh;
+            height: 75vh;
+            /* Center everything inside */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .center p {
+            font-size: 8rem;
+            font-weight: 900;
+
+        }
+
+        .step {
+            opacity: 0;
+            width: 400px;
+            height: 200px;
+            margin: 2rem auto;
+            background-color: white;
+            border: 1px solid #8a8a8a;
+        }
+
+        .step p {
             text-align: center;
             padding: 1rem;
             font-size: 1.5rem;
-            background-color: #3b3b3b;
-          }
+        }
+
+        .step.is-active {
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
     </style>
+    <script src="https://unpkg.com/scrollama"></script>
 </head>
 
 <body>
     <main>
-        <section id="scrolly1">
-            <figure class="centro">
-                <img src="img/desert.png" width="800px">
-            </figure>
-            <article>
-                <div class="step" data-step="1">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-                <div class="step" data-step="2">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-                <div class="step" data-step="3">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-            </article>
-           
-        </section>
-
-        <section id="scrolly2">
-            <figure class="centro">
-                <img src="img/lake.png" width="800px">
-            </figure>
-            <article>
-                <div class="step" data-step="1">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-                <div class="step" data-step="2">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-                <div class="step" data-step="3">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-            </article>
-            
+        <section id="intro" class="scrollyCentro">
+            <div id="cinta">
+                <h1>Titulo</h1>
+                <p>
+                    Subtitulo
+                </p>
+            </div>
 
         </section>
+
+        <section class="scrollyCentro">
+            <div class="center">
+                <img src="img/lake.png">
+            </div>
+
+            <article>
+                <div class="step" data-step="A">
+                    <p>1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    </p>
+                </div>
+                <div class="step" data-step="B">
+                    <p>2. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    </p>
+                </div>
+                <div class="step" data-step="C">
+                    <p>3. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    </p>
+                </div>
+            </article>
+        </section>
+
+        <section class="scrollyCentro">
+            <div class="center">
+                <img src="img/desert.png">
+            </div>
+
+            <article>
+                <div class="step" data-step="X">
+                    <p>1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    </p>
+                </div>
+                <div class="step" data-step="Y">
+                    <p>2. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    </p>
+                </div>
+                <div class="step" data-step="Z">
+                    <p>3. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    </p>
+                </div>
+                </div>
+            </article>
+        </section>
+        <section class="scrollyLado">
+            <article>
+                <div class="step" data-step="X">
+                    <p>1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    </p>
+                </div>
+                <div class="step" data-step="Y">
+                    <p>2. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    </p>
+                </div>
+                <div class="step" data-step="Z">
+                    <p>3. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    </p>
+                </div>
+                </div>
+            </article>
+            <div class="lado">
+                <img src="img/desert.png">
+            </div>
+        </section>
+
+
+
+        <section id="outro">Fin</section>
     </main>
+
+
     <script>
-        const scroller1 = scrollama();
-        const scroller2 = scrollama();
+        const scroller = scrollama();
 
         function handleStepEnter(response) {
-            console.log(response);
-            response.element.classList.add('is-active');
+            const { element, index, direction } = response;
+            element.classList.add("is-active");
         }
 
         function handleStepExit(response) {
-            console.log(response);
-            response.element.classList.remove('is-active');
+            const { element, index, direction } = response;
+            element.classList.remove("is-active");
         }
 
+
         function init() {
-            scroller1
+            scroller
                 .setup({
-                    step: '#scrolly1 .step',
+                    step: ".step",
                     offset: 0.5,
                     debug: true
                 })
                 .onStepEnter(handleStepEnter)
                 .onStepExit(handleStepExit);
 
-            scroller2
-                .setup({
-                    step: '#scrolly2 .step',
-                    offset: 0.5,
-                    debug: true
-                })
-                .onStepEnter(handleStepEnter)
-                .onStepExit(handleStepExit);
 
-            window.addEventListener('resize', scroller1.resize);
-            window.addEventListener('resize', scroller2.resize);
+            window.addEventListener("resize", scroller.resize);
         }
 
         init();
-
-
     </script>
-
 </body>
 
 </html>
