@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Uso de La Ceja en El Alto</title>
+    <title>Funciones hibridas en La Ceja de El Alto</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <style>
@@ -69,6 +69,7 @@
             padding: 0;
             max-width: 20rem;
             margin: 0 auto;
+            z-index: 1;
         }
 
         .center {
@@ -77,12 +78,12 @@
             left: 0;
             width: 100%;
             margin: 0;
-            z-index: 0;
             top: 12.5vh;
             height: 75vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            z-index: 0;
         }
 
         .lado {
@@ -90,12 +91,12 @@
             position: sticky;
             width: 100%;
             margin: 0;
-            z-index: -1;
             top: 12.5vh;
             height: 75vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            z-index: 0;
         }
 
         .center p {
@@ -105,25 +106,31 @@
         }
 
         .step {
-            opacity: 0;
+            opacity: 1;
             width: 400px;
-            height: 200px;
-            margin: 2rem auto;
+            height: auto;
+            margin: 40rem auto;
             background: rgba(255, 255, 255, 0.9) ;
             padding: 1.25em;
             border-radius: 10px;
             box-shadow: rgb(0 0 0 / 20%) 0px 0px 10px;
+            z-index: 1;
         }
+
+        
 
         .step p {
             text-align: center;
             padding: 1rem;
-            font-size: 1.2rem;
+            font-size: 1rem;
         }
 
         .step.is-active {
             opacity: 1;
             transition: opacity 0.5s ease-in-out;
+        }
+        iframe {
+            z-index: 0;
         }
     </style>
     <script src="https://unpkg.com/scrollama"></script>
@@ -136,6 +143,8 @@
                 <h1>Explorando un laboratorio espacial urbano: funciones híbridas en La Ceja de El Alto</h1>
                 <p>
                     Vania Calle (FAADU-UMSA)
+                </p>
+                <p>
                     Valeria Peredo (Lab TecnoSocial)
                 </p>
             </div>
