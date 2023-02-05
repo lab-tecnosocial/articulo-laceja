@@ -245,7 +245,7 @@
                 const id = element.parentElement.parentElement.dataset.flourishid;
                 const link = `https://flo.uri.sh/story/${id}/embed#slide-`;
                 const slide = element.dataset.step;
-                document.querySelector('.scrollyFlourish iframe')
+                document.querySelector(`section[data-flourishid="${id}"] iframe`)
                     .setAttribute('src', link + slide);
             }
         }

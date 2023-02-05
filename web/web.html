@@ -203,7 +203,7 @@
             </p>
         </div>
 
-        <section class="scrollyFlourish" data-flourishid="12555964">
+        <section class="scrollyFlourish">
             <article>
                 <div class="step" class="step">
                     <p>Según el Ministerio de Desarrollo Productivo y Economía Plural (2016, p. 8) el 75% de la actividad económica de El Alto corresponde a los sectores de servicio, muy por encima de la manufactura (16%) o la extracción de materias primas (1%). La pobreza urbana, las escasas oportunidades laborales, la tradición comercial familiar y la falta de un impacto real de los apoyos a los pequeños empresarios hicieron de que en El Alto la economía informal sea la principal fuente de ingresos económicos para las familias.
@@ -545,9 +545,9 @@
 
             if (element.dataset.step) {
                 const id = element.parentElement.parentElement.dataset.flourishid;
-                const link = `https://flo.uri.sh/visualisation/${id}/embed`;
+                const link = `https://flo.uri.sh/story/${id}/embed#slide-`;
                 const slide = element.dataset.step;
-                document.querySelector('.scrollyFlourish iframe')
+                document.querySelector(`section[data-flourishid="${id}"] iframe`)
                     .setAttribute('src', link + slide);
             }
         }
