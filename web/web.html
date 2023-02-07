@@ -43,7 +43,9 @@
             text-align: center;
         }
 
-
+        iframe{
+            border: none;
+        }
         /* Intro y Outro */
 
         #intro-fig {
@@ -93,9 +95,9 @@
         }
 
         #outro {
-            padding: 10rem;
+            padding: 2rem;
             text-align: center;
-            font-size: 17px;
+            font-size: 14px;
         }
 
 
@@ -146,7 +148,7 @@
             padding: 0;
             max-width: 30rem;
             margin: 0 auto;
-            right: 20%;
+            right: 30%;
         }
 
         .step {
@@ -173,6 +175,7 @@
             object-fit: contain;
             max-height: 100vh;
             max-width: 100vw;
+            padding: 1rem;
         }
 
         /* Media queries */
@@ -190,14 +193,16 @@
             }
 
             .article__center {
-                max-width: 30rem;
+                max-width: 20rem;
                 margin: 0 auto;
+                font-size: 14px;
             }
 
             .article__left {
                 max-width: 20rem;
                 margin: 0 auto;
                 right: 0;
+                font-size: 14px;
             }
 
             .step {
@@ -210,8 +215,8 @@
 
 <body>
     <main>
-        <section id="intro" class="scrollyCentro">
-            <figure id="intro-fig">
+        <section id="intro" class="scrolly">
+            <figure id="intro-fig" class="figure__full">
                 <div class="overlay"></div>
                 <video autoplay muted loop id="intro-video">
                     <source src="video/ceja.mp4" type="video/mp4">
@@ -224,17 +229,17 @@
                     <p>
                         Valeria Peredo (Lab TecnoSocial)
                     </p>
-                </div>
             </figure>
 
         </section>
 
-        <section class="scrollyCentro">
-            <figure class="center">
-                <img src="img/2-ceja-1954.jpeg" class="full">
+        <section class="scrolly">
+            <figure class="figure__full">
+                <div class="overlay-2"></div>
+                <img src="img/2-ceja-1954.jpeg" class="image__full">
             </figure>
 
-            <article>
+            <article class="article__center">
                 <div class="step">
                     <p>La Ceja de El Alto, una zona comprendida entre los barrios 16 de julio y 12 de octubre, es uno de
                         los núcleos territoriales más importantes de la ciudad de El Alto y del área metropolitana
@@ -256,8 +261,12 @@
             </article>
         </section>
 
-        <section class="scrollyLado">
-            <article>
+        <section class="scrolly">
+            <figure class="figure__semifull">
+                <img src="img/3-mapa.png" class="image__full">
+            </figure>
+
+            <article class="article__left">
                 <div class="step">
                     <p>Poco a poco, la economía de La Ceja se volvió importante para toda el área metropolitana paceña.
                     </p>
@@ -273,19 +282,15 @@
                     </p>
                 </div>
             </article>
-
-            <figure class="lado">
-                <img src="img/3-mapa.png" class="medio-full">
-            </figure>
         </section>
 
-        <section class="scrollyCentro">
-            <figure class="center">
+        <section class="scrolly">
+            <figure class="figure__full">
                 <div class="overlay-2"></div>
-                <img src="img/3.1-trafico.jpeg" class="full">
+                <img src="img/3.1-trafico.jpeg" class="image__full">
             </figure>
 
-            <article>
+            <article class="article__center">
                 <div class="step">
                     <p>Actualmente, el congestionamiento vehicular, el comercio en el espacio público y la inseguridad
                         ciudadana marcan el paisaje y la vida social de La Ceja.
@@ -304,8 +309,12 @@
             </article>
         </section>
 
-        <section class="scrollyFlourish" data-flourishid="1811020">
-            <article>
+        <section class="scrolly" data-flourishid="1811020">
+            <figure class="figure__semifull">
+                <iframe class="image__full" scrolling="no" src="https://flo.uri.sh/story/1811020/embed#slide-0"></iframe>
+            </figure>
+
+            <article class="article__left">
                 <div class="step" data-step="0">
                     <h1>Densidad comercial y organización espacial</h1>
                     <p>En sólo 6 manzanos encontramos 96 edificios y 621 negocios. Estamos en una zona con una alta
@@ -328,19 +337,15 @@
                         calle Franco Valle, entre la 1 y la 2.
                     </p>
             </article>
-
-            <figure class="lado">
-                <iframe class="medio-full" scrolling="no" src="https://flo.uri.sh/story/1811020/embed#slide-0"></iframe>
-            </figure>
         </section>
 
-        <section class="scrollyCentro">
-            <figure class="center">
+        <section class="scrolly">
+            <figure class="figure__full">
                 <div class="overlay-2"></div>
-                <img src="img/3.2-economia.jpeg" class="full">
+                <img src="img/3.2-economia.jpeg" class="image__full">
             </figure>
 
-            <article>
+            <article class="article__center">
                 <div class="step">
                     <h1>Economía y espacio en La Ceja</h1>
                 </div>
@@ -359,8 +364,12 @@
             </article>
         </section>
 
-        <section class="scrollyFlourish" data-flourishid="1819975">
-            <article>
+        <section class="scrolly" data-flourishid="1819975">
+            <figure class="figure__semifull">
+                <iframe class="image__full" scrolling="no" src="https://flo.uri.sh/story/1819975/embed#slide-0"></iframe>
+            </figure>
+
+            <article class="article__left">
                 <div class="step" data-step="0">
                     <p>Nuestros datos también reflejaron esta realidad. En La Ceja hay una enorme concentración de
                         actividades vinculadas al comercio y servicios, que impactan en su formación espacial.</p>
@@ -378,14 +387,16 @@
                         comida, reparación de celulares, salones de belleza, entre muchos otros.</p>
                 </div>
             </article>
-
-            <figure class="lado">
-                <iframe class="medio-full" scrolling="no" src="https://flo.uri.sh/story/1819975/embed#slide-0"></iframe>
-            </figure>
         </section>
 
-        <section class="scrollyFlourish" data-flourishid="1821986">
-            <article>
+        <section class="scrolly" data-flourishid="1821986">
+            <figure class="figure__semifull">
+                <iframe class="image__full" scrolling="no"
+                    src="https://flo.uri.sh/story/1821986/embed#slide-0"
+                    style="object-fit: contain !important;"></iframe>
+            </figure>
+
+            <article class="article__left">
                 <div class="step" data-step="0">
                     <p>En este mapa graficamos la ubicación de los negocios por cada rubro.
                     </p>
@@ -412,21 +423,15 @@
                     <p>Hay algunos bancos y cajeros automáticos dispersos por la zona.</p>
                 </div>
             </article>
-
-
-            <figure class="lado">
-                <iframe width="100%" height="100%" scrolling="no"
-                    src="https://flo.uri.sh/story/1821986/embed#slide-0"></iframe>
-            </figure>
         </section>
 
-        <section class="scrollyCentro">
-            <figure class="center">
+        <section class="scrolly">
+            <figure class="figure__full">
                 <div class="overlay-2"></div>
-                <img src="img/rentabilidad.jpeg" class="full">
+                <img src="img/rentabilidad.jpeg" class="image__full">
             </figure>
 
-            <article>
+            <article class="article__center">
                 <div class="step">
                     <h1>Características de los negocios en La Ceja</h1>
                 </div>
@@ -444,8 +449,13 @@
             </article>
         </section>
 
-        <section class="scrollyFlourish" data-flourishid="1816978">
-            <article>
+        <section class="scrolly" data-flourishid="1816978">
+            <figure class="figure__semifull">
+                <iframe class="image__full" scrolling="yes"
+                    src="https://flo.uri.sh/story/1816978/embed#slide-0"></iframe>
+            </figure>
+
+            <article class="article__left">
                 <div class="step" data-step="0">
                     <p>Debido a que los comerciantes invierten estratégicamente, la mayoría de los encuestados dijo que
                         sus negocios eran rentables.</p>
@@ -461,21 +471,15 @@
                     </p>
                 </div>
             </article>
-
-
-            <figure class="lado">
-                <iframe class="medio-full" scrolling="yes"
-                    src="https://flo.uri.sh/story/1816978/embed#slide-0"></iframe>
-            </figure>
         </section>
 
-        <section class="scrollyCentro">
-            <figure class="center">
+        <section class="scrolly">
+            <figure class="figure__full">
                 <div class="overlay-2"></div>
-                <img src="img/orden-calle.jpeg" class="full">
+                <img src="img/orden-calle.jpeg" class="image__full">
             </figure>
 
-            <article>
+            <article class="article__center">
                 <div class="step">
                     <h1>Organización de la calle</h1>
                 </div>
@@ -498,12 +502,12 @@
             </article>
         </section>
 
-        <section class="scrollyCentro">
-            <figure class="center">
-                <img src="img/gif.gif">
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/gif.gif" class="image__center">
             </figure>
 
-            <article>
+            <article class="article__center">
                 <div class="step">
                     <p>Las calles en La Ceja se organizan para favorecer la aglomeración.
                     </p>
@@ -525,13 +529,13 @@
             </article>
         </section>
 
-        <section class="scrollyCentro">
-            <figure class="center">
+        <section class="scrolly">
+            <figure class="figure__full">
                 <div class="overlay-2"></div>
-                <img src="img/8-calle.png" class="full">
+                <img src="img/8-calle.jpeg" class="image__full">
             </figure>
 
-            <article>
+            <article class="article__center">
                 <div class="step">
                     <p>En esta foto se puede observar claramente cómo la economía popular organiza las calles.
                     </p>
@@ -539,8 +543,12 @@
             </article>
         </section>
 
-        <section class="scrollyLado">
-            <article>
+        <section class="scrolly">
+            <figure class="figure__semifull">
+                <img src="img/11-norma.png" class="image__full">
+            </figure>
+
+            <article class="article__left">
                 <div class="step">
                     <h1>Organización de los edificios</h1>
                     <p>La Ordenanza Municipal Nº 007/96, aprobó la creación de los distritos municipales urbanos 1, 2,
@@ -549,14 +557,13 @@
                 </div>
                 </div>
             </article>
-
-            <figure class="lado">
-                <img src="img/11-norma.png" class="medio-full">
-            </figure>
         </section>
 
-        <section class="scrollyLado">
-            <article>
+        <section class="scrolly">
+            <figure class="figure__semifull">
+                <img src="img/12-norma.png" class="image__full">
+            </figure>
+            <article class="article__left">
                 <div class="step">
                     <p>A través de esta ordenanza, se aprobó también el Patrón de Usos de Asentamiento Especial Urbano,
                         que indica que La Ceja de El Alto tiene un patrón de Densidad Alta (D.A.), es decir, está
@@ -564,13 +571,14 @@
                     </p>
                 </div>
             </article>
-            <figure class="lado">
-                <img src="img/12-norma.png" class="medio-full">
-            </figure>
         </section>
 
-        <section class="scrollyLado">
-            <article>
+        <section class="scrolly">
+            <figure class="figure__semifull">
+                <img src="img/13-norma.png" class="image__full">
+            </figure>
+
+            <article class="article__left">
                 <div class="step">
                     <p>La norma establece que para construir en la zona de la Ceja; el área máxima a cubrir en zócalo es
                         90% del terreno, donde un 70% se destina a la torre, con estacionamientos de 15 metros, por cada
@@ -579,17 +587,15 @@
                     </p>
                 </div>
             </article>
-            <figure class="lado">
-                <img src="img/13-norma.png" class="medio-full">
-            </figure>
         </section>
 
-        <section class="scrollyCentro">
-            <figure class="center">
-                <img src="img/edificio.jpeg" class="full">
+        <section class="scrolly">
+            <figure class="figure__full">
+                <div class="overlay-2"></div>
+                <img src="img/edificio.jpeg" class="image__full">
             </figure>
 
-            <article>
+            <article class="article__center">
                 <div class="step">
                     <p>Pero la normativa no se cumple totalmente.
                     </p>
@@ -608,8 +614,12 @@
             </article>
         </section>
 
-        <section class="scrollyLado">
-            <article>
+        <section class="scrolly">
+            <figure class="figure__semifull">
+                <img src="img/usos-nivel.png" class="image__center">
+            </figure>
+
+            <article class="article__left">
                 <div class="step">
                     <p>En base a los usos identificados, hicimos este esquema que muestra la ocupación en porcentaje en
                         los distintos niveles de los edificios.
@@ -623,19 +633,15 @@
                 </div>
                 </div>
             </article>
-
-            <figure class="lado">
-                <img src="img/usos-nivel.png" class="medio-full">
-            </figure>
         </section>
 
-        <section class="scrollyCentro">
-            <figure class="center">
+        <section class="scrolly">
+            <figure class="figure__full">
                 <div class="overlay-2"></div>
-                <img src="img/16-foto.jpeg" class="full">
+                <img src="img/16-foto.jpeg" class="image__full">
             </figure>
 
-            <article>
+            <article class="article__center">
                 <div class="step">
                     <p>Pero los negocios han encontrado formas de cohesión, donde cada unidad económica dirige su oferta
                         a demandas propias del contexto local.
@@ -650,12 +656,12 @@
             </article>
         </section>
 
-        <section class="scrollyCentro">
-            <figure class="center">
-                <img src="img/u.png" width="100%">
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/u.png" class="image__center">
             </figure>
 
-            <article>
+            <article class="article__center">
                 <div class="step">
                     <p>Dentro de los edificios, los locales se distribuyen en forma de U. Están conectados por medio de
                         un pasillo y escaleras, que permiten ir de un nivel a otro. En algunos casos, los pasillos son
@@ -675,13 +681,13 @@
             </article>
         </section>
 
-        <section class="scrollyCentro">
-            <figure class="center">
+        <section class="scrolly">
+            <figure class="figure__full">
                 <div class="overlay-2"></div>
-                <img src="img/precios.jpeg" class="full">
+                <img src="img/precios.jpeg" class="image__full">
             </figure>
 
-            <article>
+            <article class="article__center">
                 <div class="step">
                     <p>Vania Calle conversó con los propietarios de algunos locales y constató que el precio del
                         alquiler varía en función al nivel del edificio en el que se encuentre el local.
@@ -703,12 +709,12 @@
             </article>
         </section>
 
-        <section class="scrollyCentro">
-            <figure class="center">
-                <img src="img/fragmentacion.png" width="100%">
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/fragmentacion.png" class="image__center">
             </figure>
 
-            <article>
+            <article class="article__center">
                 <div class="step">
                     <p>También encontramos un patrón de fragmentación de ambientes, que están distribuidos en diferentes
                         niveles en los edificios de la Ceja.
@@ -733,13 +739,13 @@
             </article>
         </section>
 
-        <section class="scrollyCentro">
-            <figure class="center">
+        <section class="scrolly">
+            <figure class="figure__full">
                 <div class="overlay-2"></div>
-                <img src="img/inseguridad.png" class="full">
+                <img src="img/inseguridad.png" class="image__full">
             </figure>
 
-            <article>
+            <article class="article__center">
                 <div class="step">
                     <h1>La inseguridad ciudadana</h1>
                 </div>
@@ -764,8 +770,12 @@
             </article>
         </section>
 
-        <section class="scrollyFlourish" data-flourishid="1817007">
-            <article>
+        <section class="scrolly" data-flourishid="1817007">
+            <figure class="figure__semifull">
+                <iframe class="image__full" scrolling="no" src="https://flo.uri.sh/story/1817007/embed#slide-0"></iframe>
+            </figure>
+
+            <article class="article__left">
                 <div class="step" data-step="0">
                     <p>La mayoría de nuestros encuestados consideran que su zona de trabajo es insegura.</p>
                 </div>
@@ -780,19 +790,15 @@
                     </p>
                 </div>
             </article>
-
-            <figure class="lado">
-                <iframe class="medio-full" scrolling="no" src="https://flo.uri.sh/story/1817007/embed#slide-0"></iframe>
-            </figure>
         </section>
 
-        <section class="scrollyCentro">
-            <figure class="center">
+        <section class="scrolly">
+            <figure class="figure__full">
                 <div class="overlay-2"></div>
-                <img src="img/outro.jpeg" class="full">
+                <img src="img/outro.jpeg" class="image__full">
             </figure>
 
-            <article>
+            <article class="article__center">
                 <div class="step">
                     <h1>Conclusiones</h1>
                     <p>La Ceja de El Alto es un espacio urbano altamente complejo, denso y de gran importancia
@@ -805,7 +811,8 @@
                 </div>
             </article>
         </section>
-        <section id="outro" class="scrollyCentro">
+
+        <section id="outro" class="scrolly">
             <div>
                 <h1>Metodología</h1>
                 <p>Este artículo es fruto de un trabajo colaborativo entre los estudiantes del paralelo D de la materia
