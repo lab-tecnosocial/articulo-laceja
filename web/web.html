@@ -8,7 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <style>
+        /* General */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
         @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
         body {
             font-family: 'Roboto', sans-serif;
@@ -16,33 +25,73 @@
             line-height: 1.5;
             color: #333;
             background-color: #fff;
+            margin: 0;
         }
-        
-        
-        #intro {
-            height: 100vh;
-            width: 100vw;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column; 
-            background-size: cover;
-            text-align: center;
-            color: white;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Bebas Neue';
+            font-weight: 400;
+            line-height: 1.2;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        /* Intro */
+
+        #intro-fig{
+            position: relative;
         }
 
         #cinta {
-            background-color: rgba(0, 0, 0, 0.3);
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
             width: 100%;
+            z-index: 2;
+            color: white;
+            padding: 1rem;
+            font-size: 1.5em;
+        }
+        
+
+        #intro-video {
+            width: 100%;
+            height: 112vh;
+            object-fit: cover;
         }
 
-        #outro {
-            height: 600px;
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 89%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 1;
         }
+        
+        /* Outro */
+
+        #outro {
+            padding: 10rem;
+        }
+
+
+        /* Scrollama containers */
 
         .scrollyCentro {
             position: relative;
-            padding: 1rem;
 
         }
 
@@ -51,7 +100,6 @@
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
-            padding: 1rem;
         }
 
         .scrollyFlourish {
@@ -59,7 +107,6 @@
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
-            padding: 1rem;
         }
 
 
@@ -71,23 +118,36 @@
             z-index: 1;
         }
 
+        .step {
+            opacity: 1;
+            width: 400px;
+            height: auto;
+            margin: 40rem auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1.25em;
+            border-radius: 10px;
+            box-shadow: rgb(0 0 0 / 20%) 0px 0px 10px;
+            z-index: 1;
+        }
+
+
+        .step.is-active {
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .step p {
+            text-align: center;
+            padding: 1rem;
+            font-size: 1rem;
+        }
+
+        /* Images positions */
+
         .center {
             position: -webkit-sticky;
             position: sticky;
             left: 0;
-            width: 100%;
-            margin: 0;
-            top: 12.5vh;
-            height: 75vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 0;
-        }
-
-        .lado {
-            position: -webkit-sticky;
-            position: sticky;
             width: 100%;
             margin: 0;
             top: 12.5vh;
@@ -104,42 +164,43 @@
 
         }
 
-        .step {
-            opacity: 1;
-            width: 400px;
-            height: auto;
-            margin: 40rem auto;
-            background: rgba(255, 255, 255, 0.9) ;
-            padding: 1.25em;
-            border-radius: 10px;
-            box-shadow: rgb(0 0 0 / 20%) 0px 0px 10px;
-            z-index: 1;
-        }
-
-        
-
-        .step p {
-            text-align: center;
-            padding: 1rem;
-            font-size: 1rem;
-        }
-
-        .step.is-active {
-            opacity: 1;
-            transition: opacity 0.5s ease-in-out;
-        }
-        iframe {
+        .lado {
+            position: -webkit-sticky;
+            position: sticky;
+            width: 100%;
+            margin: 0;
+            top: 12.5vh;
+            height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             z-index: 0;
         }
+
+
         .full {
-            width: 100vw !important;
-            height: 100vh !important;
-        }
-        .medio-full {
-            width: 70vw !important;
-            height: 100vh !important;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+
         }
 
+        .medio-full {
+            width: 80vw;
+            height: 100vh;
+            object-fit: cover;
+        }
+
+        /* Iframes and maps */
+
+        iframe {
+            z-index: 0;
+            border: none;
+        }
+
+        .mapa {
+            z-index: -2;
+        }
     </style>
     <script src="https://unpkg.com/scrollama"></script>
 </head>
@@ -147,25 +208,22 @@
 <body>
     <main>
         <section id="intro" class="scrollyCentro">
-            <figure>
-                <video autoplay muted loop id="myVideo">
+            <figure id="intro-fig">
+                <div class="overlay"></div>
+                <video autoplay muted loop id="intro-video">
                     <source src="video/ceja.mp4" type="video/mp4">
                 </video>
-               
+                    <div id="cinta">
+                        <h1>Explorando un laboratorio espacial urbano: funciones híbridas en La Ceja de El Alto</h1>
+                        <p>
+                            Vania Calle (FAADU-UMSA)
+                        </p>
+                        <p>
+                            Valeria Peredo (Lab TecnoSocial)
+                        </p>
+                    </div>
             </figure>
-           <article>
-            <div id="cinta">
-                <h1>Explorando un laboratorio espacial urbano: funciones híbridas en La Ceja de El Alto</h1>
-                <p>
-                    Vania Calle (FAADU-UMSA)
-                </p>
-                <p>
-                    Valeria Peredo (Lab TecnoSocial)
-                </p>
-            </div>
-           
-           </article>
-           
+    
         </section>
 
         <section class="scrollyCentro">
@@ -175,16 +233,20 @@
 
             <article>
                 <div class="step">
-                    <p>La Ceja de El Alto, una zona comprendida entre los barrios 16 de julio y 12 de octubre, es uno de los núcleos territoriales más importantes de su ciudad y del área metropolitana paceña.
+                    <p>La Ceja de El Alto, una zona comprendida entre los barrios 16 de julio y 12 de octubre, es uno de
+                        los núcleos territoriales más importantes de su ciudad y del área metropolitana paceña.
                     </p>
                 </div>
                 <div class="step">
-                    <p>Es una zona con una cultura comercial muy antigua, que comenzó a formarse entre 1928 y la guerra del Chaco, en medio de la urbanización de las periferias que vivió la ciudad de La Paz en esos años.
+                    <p>Es una zona con una cultura comercial muy antigua, que comenzó a formarse entre 1928 y la guerra
+                        del Chaco, en medio de la urbanización de las periferias que vivió la ciudad de La Paz en esos
+                        años.
                     </p>
                 </div>
-                
+
                 <div class="step">
-                    <p>En 1947, se fundó la Junta de Comerciantes de la Ceja, una organización social que desde entonces respalda la economía popular que se instaló en la zona.
+                    <p>En 1947, se fundó la Junta de Comerciantes de la Ceja, una organización social que desde entonces
+                        respalda la economía popular que se instaló en la zona.
                     </p>
                 </div>
             </article>
@@ -193,13 +255,17 @@
         <section class="scrollyLado">
             <article>
                 <div class="step">
-                    <p>Poco a poco, la economía de La Ceja se volvió importante para toda el área metropolitana paceña.</p> 
+                    <p>Poco a poco, la economía de La Ceja se volvió importante para toda el área metropolitana paceña.
+                    </p>
                 </div>
                 <div class="step">
-                    <p> En la década del 70, con el documento “Modelo de Crecimiento de la Ciudad de La Paz” de 1976, la Ceja adquiere un rol importante en la planificación territorial, como "mercado de acopio y distribución de productos", conectando La Paz, Oruro y Laja.</p>
+                    <p> En la década del 70, con el documento “Modelo de Crecimiento de la Ciudad de La Paz” de 1976, la
+                        Ceja adquiere un rol importante en la planificación territorial, como "mercado de acopio y
+                        distribución de productos", conectando La Paz, Oruro y Laja.</p>
                 </div>
                 <div class="step">
-                    <p>Pero, a medida que la Ceja incrementaba su importancia en la vida urbana paceña, la aglomeración de actividades económicas creó nuevos problemas...
+                    <p>Pero, a medida que la Ceja incrementaba su importancia en la vida urbana paceña, la aglomeración
+                        de actividades económicas creó nuevos problemas...
                     </p>
                 </div>
             </article>
@@ -216,11 +282,13 @@
 
             <article>
                 <div class="step">
-                    <p>Actualmente, el congestionamiento vehicular, el comercio en el espacio público y la inseguridad ciudadana marcan el paisaje y la vida social de La Ceja.
+                    <p>Actualmente, el congestionamiento vehicular, el comercio en el espacio público y la inseguridad
+                        ciudadana marcan el paisaje y la vida social de La Ceja.
                     </p>
                 </div>
                 <div class="step">
-                    <p>El gobierno municipal, con la ayuda de la cooperación internacional, ha intentado implementar varios planes de Reordenamiento Urbano en La Ceja, que no tuvieron grandes resultados.
+                    <p>El gobierno municipal, con la ayuda de la cooperación internacional, ha intentado implementar
+                        varios planes de Reordenamiento Urbano en La Ceja, que no tuvieron grandes resultados.
                     </p>
                 </div>
                 <div class="step">
@@ -231,18 +299,20 @@
             </article>
         </section>
 
-        <div>
+        
             <h1>Densidad comercial y organización espacial</h1>
-        </div>
+       
 
         <section class="scrollyLado">
             <article>
                 <div class="step">
-                    <p>En sólo 6 manzanos encontramos 96 edificios y 621 negocios. Estamos en una zona con una alta densidad comercial: en promedio, cada edificio posee 7 negocios.
+                    <p>En sólo 6 manzanos encontramos 96 edificios y 621 negocios. Estamos en una zona con una alta
+                        densidad comercial: en promedio, cada edificio posee 7 negocios.
                     </p>
                 </div>
                 <div class="step">
-                    <p>En este mapa se puede observar la cantidad de negocios por lote en los 6 manzanos estudiados. Los lotes con más negocios se encuentran entre la calle Alfredo Franco Valle y la calle 1.
+                    <p>En este mapa se puede observar la cantidad de negocios por lote en los 6 manzanos estudiados. Los
+                        lotes con más negocios se encuentran entre la calle Alfredo Franco Valle y la calle 1.
                     </p>
                 </div>
                 <div class="step">
@@ -253,7 +323,7 @@
             </article>
 
             <figure class="lado">
-                <iframe src="mapa/mapa_1.html" class="medio-full"></iframe>
+                <iframe src="mapa/mapa_1.html" class="mapa medio-full" scrolling="no"></iframe>
             </figure>
         </section>
 
@@ -286,10 +356,14 @@
 
             <article>
                 <div class="step">
-                    <p>Según el Ministerio de Desarrollo Productivo y Economía Plural (2016, p. 8) el 75% de la actividad económica de El Alto corresponde a los sectores de bienes y servicios, muy por encima de la manufactura (16%) o la extracción de materias primas (1%)</p>
+                    <p>Según el Ministerio de Desarrollo Productivo y Economía Plural (2016, p. 8) el 75% de la
+                        actividad económica de El Alto corresponde a los sectores de bienes y servicios, muy por encima
+                        de la manufactura (16%) o la extracción de materias primas (1%)</p>
                 </div>
                 <div class="step">
-                    <p>La pobreza urbana, las escasas oportunidades laborales, la tradición comercial familiar y la falta de un impacto real de los apoyos a los pequeños empresarios, hicieron que en El Alto la economía informal sea la principal fuente de ingresos económicos para las familias.
+                    <p>La pobreza urbana, las escasas oportunidades laborales, la tradición comercial familiar y la
+                        falta de un impacto real de los apoyos a los pequeños empresarios, hicieron que en El Alto la
+                        economía informal sea la principal fuente de ingresos económicos para las familias.
                     </p>
                 </div>
                 </div>
@@ -299,21 +373,25 @@
         <section class="scrollyFlourish" data-flourishid="1819975">
             <article>
                 <div class="step" data-step="0">
-                    <p>Nuestros datos también reflejaron esta realidad. En La Ceja hay una enorme concentración de actividades vinculadas al comercio y servicios, que impactan en su formación espacial.</p>
+                    <p>Nuestros datos también reflejaron esta realidad. En La Ceja hay una enorme concentración de
+                        actividades vinculadas al comercio y servicios, que impactan en su formación espacial.</p>
                 </div>
-    
+
                 <div class="step" data-step="1">
-                    <p>Encontramos que el 57% de los negocios de la zona se dedican al comercio de bienes y servicios. Luego, hay un 30% de locales privados que se dedican a la salud y, en menor cantidad, negocios que se dedican a ofrecer servicios hoteleros y educativos. Hay muy pocos lugares de uso gubernamental o financiero.</p>
-                 </div>
-    
+                    <p>Encontramos que el 57% de los negocios de la zona se dedican al comercio de bienes y servicios.
+                        Luego, hay un 30% de locales privados que se dedican a la salud y, en menor cantidad, negocios
+                        que se dedican a ofrecer servicios hoteleros y educativos. Hay muy pocos lugares de uso
+                        gubernamental o financiero.</p>
+                </div>
+
                 <div class="step" data-step="2">
-                    <p>Los comerciantes de La Ceja ofrecen una gran variedad de productos y servicios: ópticas, venta de comida, reparación de celulares, salones de belleza, entre muchos otros.</p>
+                    <p>Los comerciantes de La Ceja ofrecen una gran variedad de productos y servicios: ópticas, venta de
+                        comida, reparación de celulares, salones de belleza, entre muchos otros.</p>
                 </div>
             </article>
 
             <figure class="lado">
-                <iframe class="medio-full" scrolling="no"
-                    src="https://flo.uri.sh/story/1819975/embed#slide-0"></iframe>
+                <iframe class="medio-full" scrolling="no" src="https://flo.uri.sh/story/1819975/embed#slide-0"></iframe>
             </figure>
         </section>
 
@@ -324,14 +402,15 @@
                     </p>
                 </div>
                 <div class="step">
-                    <p>Dale click a los controles de la parte superior derecha del mapa para ver los rubros que te interesan. 
+                    <p>Dale click a los controles de la parte superior derecha del mapa para ver los rubros que te
+                        interesan.
                     </p>
                 </div>
                 </div>
             </article>
 
             <figure class="lado">
-                <iframe src="mapa/mapa_rubros.html"  class="medio-full"></iframe>
+                <iframe src="mapa/mapa_rubros.html" class="medio-full"></iframe>
             </figure>
         </section>
 
@@ -346,11 +425,13 @@
 
             <article>
                 <div class="step">
-                    <p>En esta economía informal, los ingresos llegan a las familias dependiendo de su cantidad de ventas diaria.
+                    <p>En esta economía informal, los ingresos llegan a las familias dependiendo de su cantidad de
+                        ventas diaria.
                     </p>
                 </div>
                 <div class="step">
-                    <p>Por eso, los comerciantes de La Ceja intentan invertir su capital en negocios rentables y productos altamente demandados.
+                    <p>Por eso, los comerciantes de La Ceja intentan invertir su capital en negocios rentables y
+                        productos altamente demandados.
                     </p>
                 </div>
                 </div>
@@ -360,11 +441,13 @@
         <section class="scrollyFlourish" data-flourishid="1816978">
             <article>
                 <div class="step" data-step="0">
-                    <p>Debido a que los comerciantes invierten estratégicamente, la mayoría de los encuestados dijo que sus negocios eran rentables.</p>
+                    <p>Debido a que los comerciantes invierten estratégicamente, la mayoría de los encuestados dijo que
+                        sus negocios eran rentables.</p>
                 </div>
 
                 <div class="step" data-step="1">
-                    <p>Asumiendo la gente invierte en algo rentable, estos son los 20 rubros más rentables en la zona.</p>
+                    <p>Asumiendo la gente invierte en algo rentable, estos son los 20 rubros más rentables en la zona.
+                    </p>
                 </div>
 
                 <div class="step" data-step="2">
@@ -391,15 +474,18 @@
 
             <article>
                 <div class="step">
-                    <p>El municipio de El Alto ha intentado regular el comercio en la vía pública mediante la Ordenanza Municipal N°106/2004.
+                    <p>El municipio de El Alto ha intentado regular el comercio en la vía pública mediante la Ordenanza
+                        Municipal N°106/2004.
                     </p>
                 </div>
                 <div class="step">
-                    <p>La alcaldía prohibió el asentamiento de nuevos puestos de venta en La Ceja y otorgó a los comerciantes espacios de asentamiento provisionales en lugares que no interfierían con el tráfico peatonal y vehicular.
+                    <p>La alcaldía prohibió el asentamiento de nuevos puestos de venta en La Ceja y otorgó a los
+                        comerciantes espacios de asentamiento provisionales en lugares que no interfierían con el
+                        tráfico peatonal y vehicular.
                     </p>
                 </div>
                 <div class="step">
-                    <p>A pesar de estas prohibiciones, el comercio en la vía pública persiste. 
+                    <p>A pesar de estas prohibiciones, el comercio en la vía pública persiste.
                     </p>
                 </div>
                 </div>
@@ -408,7 +494,7 @@
 
         <section class="scrollyCentro">
             <figure class="center">
-                <img src="img/gif.gif" class="full">
+                <img src="img/gif.gif">
             </figure>
 
             <article>
@@ -417,11 +503,13 @@
                     </p>
                 </div>
                 <div class="step">
-                    <p>Hay congestionamiento vehicular en los cruces viales. La calzada próxima a la acera es ocupada por comerciantes minoristas ambulantes, asociados y no asociados.
+                    <p>Hay congestionamiento vehicular en los cruces viales. La calzada próxima a la acera es ocupada
+                        por comerciantes minoristas ambulantes, asociados y no asociados.
                     </p>
                 </div>
                 <div class="step">
-                    <p>La acera es ocupada por comerciantes minoristas y mayoristas asociados a las tiendas de los edificios de planta baja y subsuelo. Por aquí también pasan los peatones y consumidores. 
+                    <p>La acera es ocupada por comerciantes minoristas y mayoristas asociados a las tiendas de los
+                        edificios de planta baja y subsuelo. Por aquí también pasan los peatones y consumidores.
                     </p>
                 </div>
             </article>
@@ -447,7 +535,8 @@
         <section class="scrollyLado">
             <article>
                 <div class="step">
-                    <p>La Ordenanza Municipal Nº 007/96, aprobó la creación de los distritos municipales urbanos 1, 2, 3, 4, 5, 6 y el Distrito municipal rural. La Ceja de El Alto está en el distrito urbano 6.
+                    <p>La Ordenanza Municipal Nº 007/96, aprobó la creación de los distritos municipales urbanos 1, 2,
+                        3, 4, 5, 6 y el Distrito municipal rural. La Ceja de El Alto está en el distrito urbano 6.
                     </p>
                 </div>
                 </div>
@@ -461,7 +550,9 @@
         <section class="scrollyLado">
             <article>
                 <div class="step">
-                    <p>A través de esta ordenanza, se aprobó también el Patrón de Usos de Asentamiento Especial Urbano, que indica que La Ceja de El Alto tiene un patrón de Densidad Alta (D.A.), es decir, está compuesta de edificios que usan el suelo tanto para lo comercial, como para el uso residencial.
+                    <p>A través de esta ordenanza, se aprobó también el Patrón de Usos de Asentamiento Especial Urbano,
+                        que indica que La Ceja de El Alto tiene un patrón de Densidad Alta (D.A.), es decir, está
+                        compuesta de edificios que usan el suelo tanto para lo comercial, como para el uso residencial.
                     </p>
                 </div>
             </article>
@@ -473,7 +564,10 @@
         <section class="scrollyLado">
             <article>
                 <div class="step">
-                    <p>La norma establece que para construir en la zona de la Ceja; el área máxima a cubrir en zócalo es 90% del terreno, donde un 70% se destina a la torre, con estacionamientos de 15 metros, por cada 200 m2 construidos. Si los edificios cuentan con 6 o más pisos, el edificio debe contar con ascensores.
+                    <p>La norma establece que para construir en la zona de la Ceja; el área máxima a cubrir en zócalo es
+                        90% del terreno, donde un 70% se destina a la torre, con estacionamientos de 15 metros, por cada
+                        200 m2 construidos. Si los edificios cuentan con 6 o más pisos, el edificio debe contar con
+                        ascensores.
                     </p>
                 </div>
             </article>
@@ -493,11 +587,13 @@
                     </p>
                 </div>
                 <div class="step">
-                    <p>Las edificaciones en la Ceja ocupan el 100% del terreno. Muchos edificios de más de 6 pisos no tienen ascensores. 
+                    <p>Las edificaciones en la Ceja ocupan el 100% del terreno. Muchos edificios de más de 6 pisos no
+                        tienen ascensores.
                     </p>
                 </div>
                 <div class="step">
-                    <p>Además, aunque la norma permite el uso comercial y de equipamientos compatibles con vivienda, el comercio trasciende hacia casi todos los niveles de la torre.
+                    <p>Además, aunque la norma permite el uso comercial y de equipamientos compatibles con vivienda, el
+                        comercio trasciende hacia casi todos los niveles de la torre.
                     </p>
                 </div>
                 </div>
@@ -507,11 +603,14 @@
         <section class="scrollyLado">
             <article>
                 <div class="step">
-                    <p>En base a los usos identificados, hicimos este esquema que muestra la ocupación en porcentaje en los distintos niveles de los edificios.
+                    <p>En base a los usos identificados, hicimos este esquema que muestra la ocupación en porcentaje en
+                        los distintos niveles de los edificios.
                     </p>
                 </div>
                 <div class="step">
-                    <p>La Ceja aglomera actividades que en apariencia podrían ser incompatibles, dadas las normativas urbanas de funcionamiento. Por ejemplo, la localización de bares y cantinas cerca de centros médicos o guarderías.
+                    <p>La Ceja aglomera actividades que en apariencia podrían ser incompatibles, dadas las normativas
+                        urbanas de funcionamiento. Por ejemplo, la localización de bares y cantinas cerca de centros
+                        médicos o guarderías.
                     </p>
                 </div>
                 </div>
@@ -529,11 +628,14 @@
 
             <article>
                 <div class="step">
-                    <p>Pero los negocios han encontrado formas de cohesión, donde cada unidad económica dirige su oferta a demandas propias del contexto local.
+                    <p>Pero los negocios han encontrado formas de cohesión, donde cada unidad económica dirige su oferta
+                        a demandas propias del contexto local.
                     </p>
                 </div>
                 <div class="step">
-                    <p> Por ejemplo, cerca de una discoteca, se encontrarán moteles y hostales, para aquellas personas que pasen la noche en estos centros de entretenimiento. No muy lejos de los hoteles, habrá puestos de venta de comida y caldos para despertarse luego de una noche de fiesta.</p>
+                    <p> Por ejemplo, cerca de una discoteca, se encontrarán moteles y hostales, para aquellas personas
+                        que pasen la noche en estos centros de entretenimiento. No muy lejos de los hoteles, habrá
+                        puestos de venta de comida y caldos para despertarse luego de una noche de fiesta.</p>
                 </div>
                 </div>
             </article>
@@ -541,20 +643,24 @@
 
         <section class="scrollyCentro">
             <figure class="center">
-                <img src="img/u.png" class="full">
+                <img src="img/u.png" width="100%">
             </figure>
 
             <article>
                 <div class="step">
-                    <p>Dentro de los edificios, los locales se distribuyen en forma de U. Están conectados por medio de un pasillo y escaleras, que permiten ir de un nivel a otro. En algunos casos, los pasillos son ocupados por puestos de venta desarmables.
+                    <p>Dentro de los edificios, los locales se distribuyen en forma de U. Están conectados por medio de
+                        un pasillo y escaleras, que permiten ir de un nivel a otro. En algunos casos, los pasillos son
+                        ocupados por puestos de venta desarmables.
                     </p>
                 </div>
                 <div class="step">
-                    <p>Estos son dos ejemplos de distribución de usos de suelo por niveles, el primer caso es un edificio de seis pisos y el segundo un edificio con subsuelo.
+                    <p>Estos son dos ejemplos de distribución de usos de suelo por niveles, el primer caso es un
+                        edificio de seis pisos y el segundo un edificio con subsuelo.
                     </p>
                 </div>
                 <div class="step">
-                    <p>A medida que se asciende de forma vertical por las edificaciones, la cantidad de unidades económicas disminuye, así como los clientes. </p>
+                    <p>A medida que se asciende de forma vertical por las edificaciones, la cantidad de unidades
+                        económicas disminuye, así como los clientes. </p>
                 </div>
                 </div>
             </article>
@@ -562,19 +668,23 @@
 
         <section class="scrollyCentro">
             <figure class="center">
-                <img src="img/precios.jpeg" class="full">
+                <img src="img/precios.jpeg">
             </figure>
 
             <article>
                 <div class="step">
-                    <p>Vania Calle conversó con los propietarios de algunos locales y constató que el precio del alquiler varía en función al nivel del edificio en el que se encuentre el local.
+                    <p>Vania Calle conversó con los propietarios de algunos locales y constató que el precio del
+                        alquiler varía en función al nivel del edificio en el que se encuentre el local.
                     </p>
                 </div>
                 <div class="step">
-                    <p>Por ejemplo, si un local se encuentra en la Planta Baja de un edificio y colinda con la calle, su precio estimado es de 111 Bs. por metro cuadrado. Si el local está en el segundo, tercer o cuarto piso, el metro cuadrado puede llegar a costar 70 bs.</p>
+                    <p>Por ejemplo, si un local se encuentra en la Planta Baja de un edificio y colinda con la calle, su
+                        precio estimado es de 111 Bs. por metro cuadrado. Si el local está en el segundo, tercer o
+                        cuarto piso, el metro cuadrado puede llegar a costar 70 bs.</p>
                 </div>
                 <div class="step">
-                    <p>Además, los montos varían según el uso que el comerciante le quiera dar al local. En cada caso se debe dejar garantías al propietario.</p>
+                    <p>Además, los montos varían según el uso que el comerciante le quiera dar al local. En cada caso se
+                        debe dejar garantías al propietario.</p>
                 </div>
                 <div class="step">
                     <p> Se comparte entre varios el costo del uso de los pasillos.</p>
@@ -585,20 +695,24 @@
 
         <section class="scrollyCentro">
             <figure class="center">
-                <img src="img/fragmentacion.png" class="full">
+                <img src="img/fragmentacion.png" width="100%">
             </figure>
 
             <article>
                 <div class="step">
-                    <p>También observamos un patrón de fragmentación de ambientes, que están distribuidos en diferentes niveles en los edificios de la Ceja.
+                    <p>También observamos un patrón de fragmentación de ambientes, que están distribuidos en diferentes
+                        niveles en los edificios de la Ceja.
                     </p>
                 </div>
                 <div class="step">
-                    <p>Si juntamos en un solo lugar los servicios dispersos de consultorios médicos, rayos x, ecografías, consultorios odontológicos y farmacias podríamos tener un establecimiento de Salud de primer Nivel, como muestra la imagen.
+                    <p>Si juntamos en un solo lugar los servicios dispersos de consultorios médicos, rayos x,
+                        ecografías, consultorios odontológicos y farmacias podríamos tener un establecimiento de Salud
+                        de primer Nivel, como muestra la imagen.
                     </p>
                 </div>
                 <div class="step">
-                    <p>En La Ceja, no hay un solo uso de suelo por edificación; lo que da pie a la fragmentación de los servicios en pequeños negocios de carácter privado.
+                    <p>En La Ceja, no hay un solo uso de suelo por edificación; lo que da pie a la fragmentación de los
+                        servicios en pequeños negocios de carácter privado.
                     </p>
                 </div>
                 </div>
@@ -616,15 +730,20 @@
 
             <article>
                 <div class="step">
-                    <p>La compleja circulación en el espacio público, la oferta comercial y de servicios, sumado a la aglomeración diaria; ha generado inseguridad ciudadana en la Ceja, vinculada a la excesiva presencia de bares y cantinas, además de la falta de control municipal sobre su ubicación y funcionamiento.
+                    <p>La compleja circulación en el espacio público, la oferta comercial y de servicios, sumado a la
+                        aglomeración diaria; ha generado inseguridad ciudadana en la Ceja, vinculada a la excesiva
+                        presencia de bares y cantinas, además de la falta de control municipal sobre su ubicación y
+                        funcionamiento.
                     </p>
                 </div>
                 <div class="step">
-                    <p>En la zona hay calles enteras dedicadas a la “diversión nocturna”, incluyendo salones de baile, licorerías, peñas, discotecas o alojamientos, que incrementan el crimen y la violencia.
+                    <p>En la zona hay calles enteras dedicadas a la “diversión nocturna”, incluyendo salones de baile,
+                        licorerías, peñas, discotecas o alojamientos, que incrementan el crimen y la violencia.
                     </p>
                 </div>
                 <div class="step">
-                    <p>En algunos edificios de la Ceja, la gente está organizada en contra de actos delincuenciales. En las entradas, se suelen poner letreros de advertencia como este:
+                    <p>En algunos edificios de la Ceja, la gente está organizada en contra de actos delincuenciales. En
+                        las entradas, se suelen poner letreros de advertencia como este:
                     </p>
                 </div>
                 </div>
@@ -642,14 +761,14 @@
                 </div>
 
                 <div class="step" data-step="2">
-                    <p>Los negocios instalan cámaras de seguridad, como modo de protección ante posibles actos delincuenciales.
+                    <p>Los negocios instalan cámaras de seguridad, como modo de protección ante posibles actos
+                        delincuenciales.
                     </p>
                 </div>
             </article>
 
             <figure class="lado">
-                <iframe class="medio-full" scrolling="no"
-                    src="https://flo.uri.sh/story/1817007/embed#slide-0"></iframe>
+                <iframe class="medio-full" scrolling="no" src="https://flo.uri.sh/story/1817007/embed#slide-0"></iframe>
             </figure>
         </section>
 
@@ -661,28 +780,42 @@
             <article>
                 <div class="step">
                     <h1>Conclusiones</h1>
-                <p>La Ceja de El Alto es un espacio urbano altamente complejo, denso y de gran importancia económica. La Ceja crea oportunidades para las familias que viven del comercio; pero a la vez resulta ser un reto para los urbanistas. Es necesario plantear alternativas urbanas que respeten las lógicas socioeconómicas populares, las normas y la distribución del espacio que las redes socio espaciales han establecido como medio de estrategia ante la falta de empleo. Por otro lado, es importante que toda iniciativa vaya acompañada por acciones que reduzcan la inseguridad ciudadana.</p>
+                    <p>La Ceja de El Alto es un espacio urbano altamente complejo, denso y de gran importancia
+                        económica. La Ceja crea oportunidades para las familias que viven del comercio; pero a la vez
+                        resulta ser un reto para los urbanistas. Es necesario plantear alternativas urbanas que respeten
+                        las lógicas socioeconómicas populares, las normas y la distribución del espacio que las redes
+                        socio espaciales han establecido como medio de estrategia ante la falta de empleo. Por otro
+                        lado, es importante que toda iniciativa vaya acompañada por acciones que reduzcan la inseguridad
+                        ciudadana.</p>
                 </div>
             </article>
         </section>
-
-        <div>
-            <h1>Metodología</h1>
-            <p>Este trabajo es fruto de un trabajo colaborativo entre los estudiantes del paralelo D; Vania Calle, la docente de la materia Urbanismo y Territorio II de la Facultad de Arquitectura de la UMSA; y el Lab TecnoSocial. Este artículo es un resumen de una investigación académica que publicaremos pronto.</p>
-            <p>Los estudiantes recolectaron datos de los 6 manzanos ubicados entre las calles 1 y 3 y las avenidas 6 de marzo y Raúl Salmón de la Ceja. Usaron dos formularios: con el primero capturaron información georreferenciada sobre el uso de suelo, y el segundo era una encuesta dirigida a los administradores de las distintas unidades económicas para conocer sus percepciones sobre la zona. Encontramos 621 negocios y tuvimos 180 respuestas a nuestra encuesta. Analizamos los datos con la ayuda de R y flourish. Además, la información cuantitativa y cartográfica fue complementada con observaciones al terreno realizadas por Vania Calle en enero de 2023.</p>
-        </div>
-
-        <div>
-            <h1>Créditos</h1>
-            <h2>Facultad de Artes, Diseño y Urbanismo (FAADU-UMSA) </h2>
+        <section id="outro" class="scrollyCentro">
+                <div>
+                <h1>Metodología</h1>
+                <p>Este trabajo es fruto de un trabajo colaborativo entre los estudiantes del paralelo D; Vania Calle, la
+                    docente de la materia Urbanismo y Territorio II de la Facultad de Arquitectura de la UMSA; y el Lab
+                    TecnoSocial. Este artículo es un resumen de una investigación académica que publicaremos pronto.</p>
+                <p>Los estudiantes recolectaron datos de los 6 manzanos ubicados entre las calles 1 y 3 y las avenidas 6 de
+                    marzo y Raúl Salmón de la Ceja. Usaron dos formularios: con el primero capturaron información
+                    georreferenciada sobre el uso de suelo, y el segundo era una encuesta dirigida a los administradores de
+                    las distintas unidades económicas para conocer sus percepciones sobre la zona. Encontramos 621 negocios
+                    y tuvimos 180 respuestas a nuestra encuesta. Analizamos los datos con la ayuda de R y flourish. Además,
+                    la información cuantitativa y cartográfica fue complementada con observaciones al terreno realizadas por
+                    Vania Calle en enero de 2023.</p>
+            </div>
+            <div>
+                <h1>Créditos</h1>
+                <h2>Facultad de Artes, Diseño y Urbanismo (FAADU-UMSA) </h2>
                 <p>Vania Calle - Investigación y análisis urbano</p>
                 <p>Estudiantes del paralelo D de la materia de Urbanismo II - Recolección de datos y mapeo</p>
-            <h2>Lab TecnoSocial</h2>
+                <h2>Lab TecnoSocial</h2>
                 <p>Valeria Peredo - Análisis y visualización de datos</p>
                 <p>Alex Ojeda - Desarrollo web interactivo</p>
-        </div>
-
-        <section id="outro">Fin</section>
+            </div>
+        
+               
+        </section>
     </main>
 
     <script>
@@ -711,8 +844,9 @@
             scroller
                 .setup({
                     step: ".step",
-                    offset: 0.4,
-                    debug: false
+                    offset: 0.5,
+                    debug: false,
+                    
                 })
                 .onStepEnter(handleStepEnter)
                 .onStepExit(handleStepExit);
