@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        /* Genera  */
+        /* General  */
         * {
             margin: 0;
             padding: 0;
@@ -189,7 +189,7 @@
             <figure class="figure__full">
                 <img src="img/lake.png" class="image__center">
             </figure>
-            <article class="article__left">
+            <article class="article__center">
                 <div class="step" data-step="1">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
                 </div>
@@ -212,12 +212,17 @@
 
         function handleStepEnter(response) {
             const { element, index, direction } = response;
-            element.classList.add("is-active");
+            if (element.dataset.step) {
+                const id = element.parentElement.parentElement.dataset.flourishid;
+                const link = `https://flo.uri.sh/story/${id}/embed#slide-`;
+                const slide = element.dataset.step;
+                document.querySelector(`section[data-flourishid="${id}"] iframe`)
+                    .setAttribute('src', link + slide);
+            }
         }
 
         function handleStepExit(response) {
             const { element, index, direction } = response;
-            element.classList.remove("is-active");
         }
 
         function init() {

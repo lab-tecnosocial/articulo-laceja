@@ -44,9 +44,9 @@
         }
 
 
-        /* Intro */
+        /* Intro y Outro */
 
-        #intro-fig{
+        #intro-fig {
             position: relative;
         }
 
@@ -63,7 +63,7 @@
             padding: 1rem;
             font-size: 1.5em;
         }
-        
+
 
         #intro-video {
             width: 100%;
@@ -83,7 +83,7 @@
             z-index: 1;
         }
 
-        .overlay-2{
+        .overlay-2 {
             width: 100vw;
             height: 100vh;
             object-fit: cover;
@@ -91,8 +91,6 @@
             z-index: 1;
             position: absolute;
         }
-        
-        /* Outro */
 
         #outro {
             padding: 10rem;
@@ -101,118 +99,110 @@
         }
 
 
-        /* Scrollama containers */
+        /* Scrollama style */
 
-        .scrollyCentro {
+        .scrolly {
             position: relative;
-
+            padding: 0.1px;
         }
 
-        .scrollyLado {
-            position: relative;
-            display: -webkit-box;
-            display: -ms-flexbox;
+        .figure__full {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            z-index: 0;
             display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
 
-        .scrollyFlourish {
-            position: relative;
-            display: -webkit-box;
-            display: -ms-flexbox;
+        .figure__semifull {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            left: 20%;
+            height: 100vh;
+            width: 80vw;
+            z-index: 0;
             display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
 
-
-        article {
+        .article__center {
             position: relative;
             padding: 0;
-            max-width: 20rem;
+            max-width: 30rem;
             margin: 0 auto;
-            z-index: 1;
+        }
+
+        .article__left {
+            position: relative;
+            padding: 0;
+            max-width: 30rem;
+            margin: 0 auto;
+            right: 20%;
         }
 
         .step {
-            opacity: 1;
-            width: 550px;
-            height: auto;
             margin: 40rem auto;
-            background: rgba(255, 255, 255, 0.86);
+            background: rgba(255, 255, 255, 0.9);
             padding: 1.25em;
             border-radius: 10px;
             box-shadow: rgb(0 0 0 / 20%) 0px 0px 10px;
-            z-index: 1;
+            color: black;
         }
 
-
-        .step.is-active {
-            opacity: 1;
-            transition: opacity 0.5s ease-in-out;
-        }
-
-        .step p {
-            text-align: center;
-            padding: 1rem;
-            font-size: 1.2rem;
-        }
-
-        /* Images positions */
-
-        .center {
-            position: -webkit-sticky;
-            position: sticky;
-            left: 0;
+        /* Images */
+        .image__full {
+            height: 100%;
             width: 100%;
-            margin: 0;
-            top: 12.5vh;
-            height: 75vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 0;
+            object-fit: cover;
+            max-height: 100vh;
+            max-width: 100vw;
         }
 
-        .center p {
-            font-size: 8rem;
-            font-weight: 900;
-
-        }
-
-        .lado {
-            position: -webkit-sticky;
-            position: sticky;
+        .image__center {
+            height: 100%;
             width: 100%;
-            margin: 0;
-            top: 12.5vh;
-            height: 75vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 0;
+            object-fit: contain;
+            max-height: 100vh;
+            max-width: 100vw;
         }
 
+        /* Media queries */
 
-        .full {
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
 
-        }
+        @media screen and (max-width: 480px) {
+            .figure__full {
+                height: 100vh;
+                width: 100vw;
+            }
 
-        .medio-full {
-            width: 80vw;
-            height: 100vh;
-            object-fit: cover;
-        }
+            .figure__semifull {
+                height: 100vh;
+                width: 100vw;
+            }
 
-        /* Iframes and maps */
+            .article__center {
+                max-width: 30rem;
+                margin: 0 auto;
+            }
 
-        iframe {
-            z-index: 0;
-            border: none;
-        }
+            .article__left {
+                max-width: 20rem;
+                margin: 0 auto;
+                right: 0;
+            }
 
-        .mapa {
-            z-index: -2;
+            .step {
+                margin: 40rem auto;
+            }
         }
     </style>
     <script src="https://unpkg.com/scrollama"></script>
@@ -226,17 +216,17 @@
                 <video autoplay muted loop id="intro-video">
                     <source src="video/ceja.mp4" type="video/mp4">
                 </video>
-                    <div id="cinta">
-                        <h1>Explorando un laboratorio espacial urbano: funciones híbridas en La Ceja de El Alto</h1>
-                        <p>
-                            Vania Calle (FAADU-UMSA)
-                        </p>
-                        <p>
-                            Valeria Peredo (Lab TecnoSocial)
-                        </p>
-                    </div>
+                <div id="cinta">
+                    <h1>Explorando un laboratorio espacial urbano: funciones híbridas en La Ceja de El Alto</h1>
+                    <p>
+                        Vania Calle (FAADU-UMSA)
+                    </p>
+                    <p>
+                        Valeria Peredo (Lab TecnoSocial)
+                    </p>
+                </div>
             </figure>
-    
+
         </section>
 
         <section class="scrollyCentro">
@@ -247,7 +237,8 @@
             <article>
                 <div class="step">
                     <p>La Ceja de El Alto, una zona comprendida entre los barrios 16 de julio y 12 de octubre, es uno de
-                        los núcleos territoriales más importantes de la ciudad de El Alto y del área metropolitana paceña.
+                        los núcleos territoriales más importantes de la ciudad de El Alto y del área metropolitana
+                        paceña.
                     </p>
                 </div>
                 <div class="step">
@@ -312,35 +303,35 @@
                 </div>
             </article>
         </section>
-        
+
         <section class="scrollyFlourish" data-flourishid="1811020">
-                <article>
-                    <div class="step" data-step="0">
-                        <h1>Densidad comercial y organización espacial</h1>
-                        <p>En sólo 6 manzanos encontramos 96 edificios y 621 negocios. Estamos en una zona con una alta
-                            densidad comercial: en promedio, cada edificio posee 7 negocios.
-                        </p>
-                    </div>
+            <article>
+                <div class="step" data-step="0">
+                    <h1>Densidad comercial y organización espacial</h1>
+                    <p>En sólo 6 manzanos encontramos 96 edificios y 621 negocios. Estamos en una zona con una alta
+                        densidad comercial: en promedio, cada edificio posee 7 negocios.
+                    </p>
+                </div>
 
-                    <div class="step" data-step="0">
-                        <p>En este mapa puedes ver la cantidad de negocios por lote en los 6 manzanos estudiados.
-                        </p>
-                    </div>
-    
-                    <div class="step" data-step="1">
-                        <p>En la zona hay lugares más densos que otros.
-                        </p>
-                    </div>
+                <div class="step" data-step="0">
+                    <p>En este mapa puedes ver la cantidad de negocios por lote en los 6 manzanos estudiados.
+                    </p>
+                </div>
 
-                    <div class="step" data-step="1">
-                        <p>Este mapa de calor nos muestra que el área de mayor concentración de actividades económicas es la calle Franco Valle, entre la 1 y la 2.
-                        </p>
-                </article>
-    
-                <figure class="lado">
-                    <iframe class="medio-full" scrolling="no"
-                        src="https://flo.uri.sh/story/1811020/embed#slide-0"></iframe>
-                </figure>
+                <div class="step" data-step="1">
+                    <p>En la zona hay lugares más densos que otros.
+                    </p>
+                </div>
+
+                <div class="step" data-step="1">
+                    <p>Este mapa de calor nos muestra que el área de mayor concentración de actividades económicas es la
+                        calle Franco Valle, entre la 1 y la 2.
+                    </p>
+            </article>
+
+            <figure class="lado">
+                <iframe class="medio-full" scrolling="no" src="https://flo.uri.sh/story/1811020/embed#slide-0"></iframe>
+            </figure>
         </section>
 
         <section class="scrollyCentro">
@@ -351,7 +342,7 @@
 
             <article>
                 <div class="step">
-                        <h1>Economía y espacio en La Ceja</h1>
+                    <h1>Economía y espacio en La Ceja</h1>
                 </div>
                 <div class="step">
                     <p>Según el Ministerio de Desarrollo Productivo y Economía Plural (2016, p. 8) el 75% de la
@@ -392,7 +383,7 @@
                 <iframe class="medio-full" scrolling="no" src="https://flo.uri.sh/story/1819975/embed#slide-0"></iframe>
             </figure>
         </section>
-        
+
         <section class="scrollyFlourish" data-flourishid="1821986">
             <article>
                 <div class="step" data-step="0">
@@ -477,7 +468,7 @@
                     src="https://flo.uri.sh/story/1816978/embed#slide-0"></iframe>
             </figure>
         </section>
-        
+
         <section class="scrollyCentro">
             <figure class="center">
                 <div class="overlay-2"></div>
@@ -805,23 +796,33 @@
                 <div class="step">
                     <h1>Conclusiones</h1>
                     <p>La Ceja de El Alto es un espacio urbano altamente complejo, denso y de gran importancia
-                        económica. La Ceja crea oportunidades para familias que viven del comercio; a la vez que genera grandes retos para el ordenamiento territorial. Es necesario plantear alternativas urbanas que respeten
-                        las lógicas socioeconómicas populares y la distribución del espacio que se han formado como una estrategia ante la falta de empleo. Por otro lado, es importante implementar planes que reduzcan la inseguridad ciudadana.</p>
+                        económica. La Ceja crea oportunidades para familias que viven del comercio; a la vez que genera
+                        grandes retos para el ordenamiento territorial. Es necesario plantear alternativas urbanas que
+                        respeten
+                        las lógicas socioeconómicas populares y la distribución del espacio que se han formado como una
+                        estrategia ante la falta de empleo. Por otro lado, es importante implementar planes que reduzcan
+                        la inseguridad ciudadana.</p>
                 </div>
             </article>
         </section>
         <section id="outro" class="scrollyCentro">
-                <div>
+            <div>
                 <h1>Metodología</h1>
-                <p>Este artículo es fruto de un trabajo colaborativo entre los estudiantes del paralelo D de la materia Urbanismo y Territorio II; Vania Calle, la
+                <p>Este artículo es fruto de un trabajo colaborativo entre los estudiantes del paralelo D de la materia
+                    Urbanismo y Territorio II; Vania Calle, la
                     docente de la materia de la Facultad de Arquitectura de la UMSA; y el Lab
                     TecnoSocial. Este artículo es un resumen de una investigación académica que publicaremos pronto.</p>
-                <p>Los estudiantes recolectaron datos de los 6 manzanos ubicados entre las calles 1 y 3 y las avenidas 6 de
+                <p>Los estudiantes recolectaron datos de los 6 manzanos ubicados entre las calles 1 y 3 y las avenidas 6
+                    de
                     marzo y Raúl Salmón de la Ceja. Usaron dos formularios: con el primero capturaron información
-                    georreferenciada sobre el uso de suelo, y el segundo era una encuesta dirigida a los administradores de
-                    las distintas unidades económicas para conocer sus percepciones sobre la zona. Encontramos 621 negocios
-                    y tuvimos 180 respuestas a nuestra encuesta. Analizamos los datos con la ayuda de R y flourish. Además,
-                    la información cuantitativa y cartográfica fue complementada con observaciones al terreno realizadas por
+                    georreferenciada sobre el uso de suelo, y el segundo era una encuesta dirigida a los administradores
+                    de
+                    las distintas unidades económicas para conocer sus percepciones sobre la zona. Encontramos 621
+                    negocios
+                    y tuvimos 180 respuestas a nuestra encuesta. Analizamos los datos con la ayuda de R y flourish.
+                    Además,
+                    la información cuantitativa y cartográfica fue complementada con observaciones al terreno realizadas
+                    por
                     Vania Calle en enero de 2023.</p>
             </div>
             <div>
@@ -833,8 +834,8 @@
                 <p>Valeria Peredo - Análisis y visualización de datos</p>
                 <p>Alex Ojeda - Desarrollo web interactivo</p>
             </div>
-        
-               
+
+
         </section>
     </main>
 
@@ -866,7 +867,7 @@
                     step: ".step",
                     offset: 0.5,
                     debug: false,
-                    
+
                 })
                 .onStepEnter(handleStepEnter)
                 .onStepExit(handleStepExit);
