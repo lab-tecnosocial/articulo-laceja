@@ -14,6 +14,18 @@
             box-sizing: border-box;
         }
 
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .text-block {
+            padding: 4rem;
+            margin: 0 10rem;
+        }
+
+
 
         /* Scrollama style */
 
@@ -89,12 +101,12 @@
             object-fit: contain;
             max-height: 100vh;
             max-width: 100vw;
+            padding: 2rem;
         }
 
         /* Media queries */
         
-
-        @media screen and (max-width: 480px) {
+        @media screen and (max-width: 600px) {
             .figure__full {
                 height: 100vh;
                 width: 100vw;
@@ -106,7 +118,7 @@
             }
 
             .article__center {
-                max-width: 30rem;
+                max-width: 20rem;
                 margin: 0 auto;
             }
 
@@ -127,6 +139,7 @@
 
 <body>
     <main>
+
         <section class="scrolly">
             <figure class="figure__full">
                 <img src="img/desert.png" class="image__full">
@@ -146,6 +159,7 @@
                 </div>
             </article>
         </section>
+
         <section class="scrolly">
             <figure class="figure__full">
                 <img src="img/door.png" class="image__full">
@@ -165,6 +179,7 @@
                 </div>
             </article>
         </section>
+
         <section class="scrolly">
             <figure class="figure__semifull">
                 <img src="img/lake.png" class="image__full">
@@ -187,7 +202,7 @@
 
         <section class="scrolly">
             <figure class="figure__full">
-                <img src="img/lake.png" class="image__center">
+                <img src="img/desert.png" class="image__center">
             </figure>
             <article class="article__center">
                 <div class="step" data-step="1">
@@ -202,6 +217,33 @@
                 <div class="step" data-step="4">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
                 </div>
+            </article>
+        </section>
+
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/door.png" class="image__full">
+            </figure>
+            <article class="article__center">
+                <div class="step" data-step="1">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+                </div>
+                <div class="step" data-step="2">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+                </div>
+                <div class="step" data-step="3">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+                </div>
+                <div class="step" data-step="4">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="scrolly text-block">
+            <article>
+                <h1>Subtitulo</h1>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt provident impedit, expedita quidem dolorem ducimus accusamus dolore quaerat quasi officia quos porro ex minima repellendus rerum vitae quisquam vel voluptatem.</p>
             </article>
         </section>
 
@@ -233,7 +275,6 @@
                     debug: false
                 }).onStepEnter(handleStepEnter)
                 .onStepExit(handleStepExit);
-
 
             window.addEventListener("resize", scroller.resize);
         }
