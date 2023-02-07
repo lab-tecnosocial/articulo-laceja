@@ -22,13 +22,27 @@
             padding: 0.1px;
         }
 
-        figure {
+        .figure__full {
             position: -webkit-sticky;
             position: sticky;
             top: 0;
             left: 0;
             height: 100vh;
             width: 100vw;
+            z-index: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .figure__semifull {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            left: 20%;
+            height: 100vh;
+            width: 80vw;
             z-index: 0;
             display: flex;
             align-items: center;
@@ -69,18 +83,43 @@
             max-width: 100vw;
         }
 
-        .image__semifull{
-            position: relative;
+        .image__center {
             height: 100%;
             width: 100%;
-            object-fit: cover;
+            object-fit: contain;
             max-height: 100vh;
-            max-width: 80vw;
-            left: 20%;
-            right: 0;
+            max-width: 100vw;
         }
 
+        /* Media queries */
+        
 
+        @media screen and (max-width: 480px) {
+            .figure__full {
+                height: 100vh;
+                width: 100vw;
+            }
+
+            .figure__semifull {
+                height: 100vh;
+                width: 100vw;
+            }
+
+            .article__center {
+                max-width: 30rem;
+                margin: 0 auto;
+            }
+
+            .article__left{
+                max-width: 20rem;
+                margin: 0 auto;
+                right: 0;
+            }
+
+            .step {
+                margin: 40rem auto;
+            }
+        }
 
     </style>
     <script src="https://unpkg.com/scrollama"></script>
@@ -89,7 +128,7 @@
 <body>
     <main>
         <section class="scrolly">
-            <figure>
+            <figure class="figure__full">
                 <img src="img/desert.png" class="image__full">
             </figure>
             <article class="article__center">
@@ -108,7 +147,7 @@
             </article>
         </section>
         <section class="scrolly">
-            <figure>
+            <figure class="figure__full">
                 <img src="img/door.png" class="image__full">
             </figure>
             <article class="article__center">
@@ -127,8 +166,28 @@
             </article>
         </section>
         <section class="scrolly">
-            <figure>
-                <img src="img/lake.png" class="image__semifull">
+            <figure class="figure__semifull">
+                <img src="img/lake.png" class="image__full">
+            </figure>
+            <article class="article__left">
+                <div class="step" data-step="1">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+                </div>
+                <div class="step" data-step="2">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+                </div>
+                <div class="step" data-step="3">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+                </div>
+                <div class="step" data-step="4">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/lake.png" class="image__center">
             </figure>
             <article class="article__left">
                 <div class="step" data-step="1">
