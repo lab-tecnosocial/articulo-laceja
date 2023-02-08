@@ -1,0 +1,232 @@
+        /* General */
+
+        @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+            background-color: #FAFAF8;
+            margin: 0;
+        }
+
+        h1 {
+            font-family: 'Bebas Neue';
+            font-weight: 400;
+            line-height: 1.2;
+            margin: 0;
+            padding: 0;
+            font-size: 32px;
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'Bebas Neue';
+            font-weight: 400;
+            line-height: 1.2;
+            margin: 0;
+            padding: 0;
+            font-size: 26px;
+            text-align: center;
+        }
+
+        h3 {
+            font-family: 'Bebas Neue';
+            font-weight: 400;
+            line-height: 1.2;
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        iframe {
+            border: none;
+        }
+
+        /* Intro y Outro */
+
+        #intro-fig {
+            position: relative;
+        }
+
+        #cinta {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            z-index: 2;
+            color: white;
+            padding: 1rem;
+            font-size: 1.5em;
+        }
+
+
+        #intro-video {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .overlay-2 {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            background-color: rgba(0, 0, 0, 0.09);
+            z-index: 1;
+            position: absolute;
+        }
+
+        #outro {
+            padding: 2rem;
+            text-align: center;
+            font-size: 14px;
+        }
+
+
+        /* Scrollama style */
+
+        .scrolly {
+            position: relative;
+            padding: 0.1px;
+        }
+
+        .figure__full {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            z-index: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .figure__semifull {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            left: 20%;
+            height: 100vh;
+            width: 80vw;
+            z-index: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            z-index: 0;
+
+        }
+
+        .article__center {
+            position: relative;
+            padding: 0;
+            max-width: 30rem;
+            margin: 0 auto;
+            z-index: 1;
+
+        }
+
+        .article__left {
+            position: relative;
+            padding: 0;
+            max-width: 30rem;
+            margin: 0 auto;
+            right: 30%;
+            z-index: 1;
+        }
+
+        .step {
+            margin: 40rem auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1.25em;
+            border-radius: 10px;
+            box-shadow: rgb(0 0 0 / 20%) 0px 0px 10px;
+            color: black;
+        }
+
+        /* Lista */
+        .row {
+            display: flex;
+        }
+
+        .column {
+            flex: 50%;
+            font-size: 12px;
+        }
+
+        /* Images */
+        .image__full {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            max-height: 100vh;
+            max-width: 100vw;
+        }
+
+        .image__center {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            max-height: 100vh;
+            max-width: 100vw;
+            padding: 1rem;
+        }
+
+        /* Media queries */
+
+        @media screen and (max-width: 480px) {
+            .figure__full {
+                height: 100vh;
+                width: 100vw;
+            }
+
+            .figure__semifull {
+                height: 100vh;
+                width: 100vw;
+            }
+
+            .article__center {
+                max-width: 20rem;
+                margin: 0 auto;
+                font-size: 14px;
+            }
+
+            .article__left {
+                max-width: 20rem;
+                margin: 0 auto;
+                right: 0;
+                font-size: 14px;
+            }
+
+            .step {
+                margin: 25rem auto;
+            }
+        }

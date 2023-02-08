@@ -6,235 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Funciones hibridas en La Ceja de El Alto</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <style>
-        /* General */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box
-        }
-
-        @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            font-size: 16px;
-            line-height: 1.5;
-            color: #333;
-            background-color: #FAFAF8;
-            margin: 0;
-        }
-
-        h1 {
-            font-family: 'Bebas Neue';
-            font-weight: 400;
-            line-height: 1.2;
-            margin: 0;
-            padding: 0;
-            font-size: 32px;
-            text-align: center;
-        }
-
-        h2 {
-            font-family: 'Bebas Neue';
-            font-weight: 400;
-            line-height: 1.2;
-            margin: 0;
-            padding: 0;
-            font-size: 26px;
-            text-align: center;
-        }
-
-        h3 {
-            font-family: 'Bebas Neue';
-            font-weight: 400;
-            line-height: 1.2;
-            margin: 0;
-            padding: 0;
-            font-size: 20px;
-            text-align: center;
-        }
-
-        iframe{
-            border: none;
-        }
-        /* Intro y Outro */
-
-        #intro-fig {
-            position: relative;
-        }
-
-        #cinta {
-            position: absolute;
-            top: 45%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.5);
-            width: 100%;
-            z-index: 2;
-            color: white;
-            padding: 1rem;
-            font-size: 1.5em;
-        }
-
-
-        #intro-video {
-            width: 100%;
-            height: 112vh;
-            object-fit: cover;
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 89%;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.3);
-            z-index: 1;
-        }
-
-        .overlay-2 {
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
-            background-color: rgba(0, 0, 0, 0.09);
-            z-index: 1;
-            position: absolute;
-        }
-
-        #outro {
-            padding: 2rem;
-            text-align: center;
-            font-size: 14px;
-        }
-
-
-        /* Scrollama style */
-
-        .scrolly {
-            position: relative;
-            padding: 0.1px;
-        }
-
-        .figure__full {
-            position: -webkit-sticky;
-            position: sticky;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            width: 100vw;
-            z-index: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .figure__semifull {
-            position: -webkit-sticky;
-            position: sticky;
-            top: 0;
-            left: 20%;
-            height: 100vh;
-            width: 80vw;
-            z-index: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .article__center {
-            position: relative;
-            padding: 0;
-            max-width: 30rem;
-            margin: 0 auto;
-        }
-
-        .article__left {
-            position: relative;
-            padding: 0;
-            max-width: 30rem;
-            margin: 0 auto;
-            right: 30%;
-        }
-
-        .step {
-            margin: 40rem auto;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 1.25em;
-            border-radius: 10px;
-            box-shadow: rgb(0 0 0 / 20%) 0px 0px 10px;
-            color: black;
-        }
-
-         /* Lista */
-         .row {
-            display: flex;
-        }
-
-        .column {
-            flex: 50%;
-            font-size: 12px;
-        }
-
-        /* Images */
-        .image__full {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-            max-height: 100vh;
-            max-width: 100vw;
-        }
-
-        .image__center {
-            height: 100%;
-            width: 100%;
-            object-fit: contain;
-            max-height: 100vh;
-            max-width: 100vw;
-            padding: 1rem;
-        }
-
-        /* Media queries */
-
-
-        @media screen and (max-width: 480px) {
-            .figure__full {
-                height: 100vh;
-                width: 100vw;
-            }
-
-            .figure__semifull {
-                height: 100vh;
-                width: 100vw;
-            }
-
-            .article__center {
-                max-width: 20rem;
-                margin: 0 auto;
-                font-size: 14px;
-            }
-
-            .article__left {
-                max-width: 20rem;
-                margin: 0 auto;
-                right: 0;
-                font-size: 14px;
-            }
-
-            .step {
-                margin: 40rem auto;
-            }
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
     <script src="https://unpkg.com/scrollama"></script>
 </head>
 
@@ -243,18 +18,23 @@
         <section id="intro" class="scrolly">
             <figure id="intro-fig" class="figure__full">
                 <div class="overlay"></div>
-                <video autoplay muted loop id="intro-video">
-                    <source src="video/ceja.mp4" type="video/mp4">
+                <video autoplay muted loop playsinline id="intro-video">
+                    <source src="video/la-ceja-corto.webm" type="video/webm">
                 </video>
-                <div id="cinta">
-                    <h1>Explorando un laboratorio espacial urbano: funciones híbridas en La Ceja de El Alto</h1>
-                    <p>
-                        Vania Calle (FAADU-UMSA)
-                    </p>
-                    <p>
-                        Valeria Peredo (Lab TecnoSocial)
-                    </p>
+                <!-- <div id="intro-video">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/FXbsfjb8DlE?controls=0&autoplay=1&mute=1&playsinline=1"></iframe>
+                </div> -->
+                
             </figure>
+            <div id="cinta">
+                <h1>Explorando un laboratorio espacial urbano: funciones híbridas en La Ceja de El Alto</h1>
+                <p>
+                    Vania Calle (FAADU-UMSA)
+                </p>
+                <p>
+                    Valeria Peredo (Lab TecnoSocial)
+                </p>
+            </div>
 
         </section>
 
@@ -336,7 +116,8 @@
 
         <section class="scrolly" data-flourishid="1811020">
             <figure class="figure__semifull">
-                <iframe class="image__full" scrolling="no" src="https://flo.uri.sh/story/1811020/embed#slide-0"></iframe>
+                <iframe class="image__full" scrolling="no"
+                    src="https://flo.uri.sh/story/1811020/embed#slide-0"></iframe>
             </figure>
 
             <article class="article__left">
@@ -373,7 +154,7 @@
             <article class="article__center">
                 <div class="step">
                     <h1>Economía y espacio en La Ceja</h1>
-                </br>
+                    </br>
                     <p>Según el Ministerio de Desarrollo Productivo y Economía Plural (2016, p. 8) el 75% de la
                         actividad económica de El Alto corresponde a los sectores de bienes y servicios, muy por encima
                         de la manufactura (16%) o la extracción de materias primas (1%)</p>
@@ -390,7 +171,8 @@
 
         <section class="scrolly" data-flourishid="1819975">
             <figure class="figure__semifull">
-                <iframe class="image__full" scrolling="no" src="https://flo.uri.sh/story/1819975/embed#slide-0"></iframe>
+                <iframe class="image__full" scrolling="no"
+                    src="https://flo.uri.sh/story/1819975/embed#slide-0"></iframe>
             </figure>
 
             <article class="article__left">
@@ -400,19 +182,20 @@
                 </div>
 
                 <div class="step" data-step="1">
-                    <p>La mayoría de los negocios están dentro del rubro de bienes y servicios, pero también hay locales dedicados a la salud, hotelería y educación.</p>
+                    <p>La mayoría de los negocios están dentro del rubro de bienes y servicios, pero también hay locales
+                        dedicados a la salud, hotelería y educación.</p>
                 </div>
 
                 <div class="step" data-step="2">
-                    <p>Las galerías de La Ceja ofrecen una gran variedad de productos y servicios, que puedes ver en este gráfico.</p>
+                    <p>Las galerías de La Ceja ofrecen una gran variedad de productos y servicios, que puedes ver en
+                        este gráfico.</p>
                 </div>
             </article>
         </section>
 
         <section class="scrolly" data-flourishid="1821986">
             <figure class="figure__semifull">
-                <iframe class="image__full" scrolling="no"
-                    src="https://flo.uri.sh/story/1821986/embed#slide-0"
+                <iframe class="image__full" scrolling="no" src="https://flo.uri.sh/story/1821986/embed#slide-0"
                     style="object-fit: contain !important;"></iframe>
             </figure>
 
@@ -454,8 +237,9 @@
             <article class="article__center">
                 <div class="step">
                     <h1>Características de los negocios en La Ceja</h1>
-                </br>
-                    <p>Aquí se debe diferenciar las actividades económicas en galerías y la venta de bienes y servicios que se oferta en el espacio público, denominado comercio informal.</p>
+                    </br>
+                    <p>Aquí se debe diferenciar las actividades económicas en galerías y la venta de bienes y servicios
+                        que se oferta en el espacio público, denominado comercio informal.</p>
                 </div>
                 <div class="step">
                     <p>En la economía informal, los ingresos llegan a las familias dependiendo de su cantidad de
@@ -508,7 +292,7 @@
             <article class="article__center">
                 <div class="step">
                     <h1>Organización de la calle</h1>
-                </br>
+                    </br>
                     <p>El municipio de El Alto ha intentado regular el comercio en la vía pública mediante la Ordenanza
                         Municipal N°106/2004.
                     </p>
@@ -624,12 +408,14 @@
                     </p>
                 </div>
                 <div class="step">
-                    <p>La mayoría de las edificaciones en la Ceja ocupan el 100% del terreno. Y los edificios de más de 6 pisos no
+                    <p>La mayoría de las edificaciones en la Ceja ocupan el 100% del terreno. Y los edificios de más de
+                        6 pisos no
                         tienen ascensores.
                     </p>
                 </div>
                 <div class="step">
-                    <p>Además, si bien la norma permite el uso de suelo comercial, muchos de los locales no son compatibles entre sí.
+                    <p>Además, si bien la norma permite el uso de suelo comercial, muchos de los locales no son
+                        compatibles entre sí.
                     </p>
                 </div>
                 </div>
@@ -784,7 +570,7 @@
             <article class="article__center">
                 <div class="step">
                     <h1>La inseguridad ciudadana</h1>
-                </br>
+                    </br>
                     <p>La compleja circulación en el espacio público, la oferta comercial y de servicios, sumado a la
                         aglomeración diaria; ha generado inseguridad ciudadana en la Ceja, vinculada a la excesiva
                         presencia de bares y cantinas, además de la falta de control municipal sobre su ubicación y
@@ -807,7 +593,8 @@
 
         <section class="scrolly" data-flourishid="1817007">
             <figure class="figure__semifull">
-                <iframe class="image__full" scrolling="no" src="https://flo.uri.sh/story/1817007/embed#slide-0"></iframe>
+                <iframe class="image__full" scrolling="no"
+                    src="https://flo.uri.sh/story/1817007/embed#slide-0"></iframe>
             </figure>
 
             <article class="article__left">
@@ -864,7 +651,8 @@
                     negocios
                     y tuvimos 180 respuestas a nuestra encuesta. Analizamos los datos con la ayuda de R y flourish.
                     Además,
-                    la información cuantitativa y cartográfica fue complementada con observaciones en el terreno realizadas
+                    la información cuantitativa y cartográfica fue complementada con observaciones en el terreno
+                    realizadas
                     por
                     Vania Calle en enero de 2023.</p>
                 </br>
@@ -883,80 +671,80 @@
                 <h3>Estudiantes que participaron en la recolección de datos</h3>
                 </br>
                 <div class="row">
-                     <div class="column">
-                            <p>Aaron Saul Alcazar Da Silva</p>
-                            <p>Clara Aydee Aliaga Apaza</p>
-                            <p>Lilian Raquel Alvarado Benitez</p>
-                            <p>Sergio Eduardo Apaza Colque</p>
-                            <p>Oscar Henry Apaza Mamani</p>
-                            <p>Carla Andrea Arratia Arratia</p>
-                            <p>Alex Aruquipa Vargas</p>
-                            <p>Alvaro Fernando Barradas Yujra</p>
-                            <p>Noelia Carol Bonifacio Pomacosi</p>
-                            <p>Emmanuel Ruben Callejas Escobar</p>
-                            <p>Lizeth Calle Ramos</p>
-                            <p>Elim Abigail Coaquira Ramos</p>
-                            <p>Luis Oscar Coarite Mamani</p>
-                            <p>Ruddy Guery Coarite Quelali</p>
-                            <p>Ana Luisa Condori Blanco</p>
-                            <p>Javier Osvaldo Cruz Alarcon</p>
-                            <p>Madeline Cuevas Escarzo</p>
-                            <p>Hander Willyams Cuno Luque</p>
-                            <p>Norman Gerardo Diaz Paco</p>
-                            <p>Manuel Antonio Espejo Rios</p>
-                            <p>Adrian Fabricio Fernandez Nuñez</p>
-                            <p>Jhonatan Jorge Flores Condori</p>
-                            <p>Estrella Libertad Flores Lima</p>
-                            <p>Mikaela Aleida Gutierrez Millares</p>
-                            <p>Carla Helguero Tapia</p>
-                            <p>Brayan Huanca Moncada</p>
-                            <p>Julio Enrique Ilaquita Carlo</p>
-                            <p>Bryan Gerzon Illanes Campos</p>
-                            <p>Christian Eiver Larico Ramos</p>
-                            <p>Edgar Felipe Laura Carrillo</p>
-                            <p>Herlan Limachi Apaza</p>
-                            <p>Jhoseline Machaca Mamani</p>
-                            <p>Brayam Hector Mallcu Huaquipa</p>
-                        </div>
-    
-                        <div class="column">
-                            <p>Yuli Estefani Mamani Apaz</p>
-                            <p>Aleyda Mamani Lequipe</p>
-                            <p>Martin Clemente Mamani Merlo</p>
-                            <p>Linden Mamani Quispe</p>
-                            <p>Miriam Grecia Mamani Quispe</p>
-                            <p>Edgar Ruddy Matias Aranibar</p>
-                            <p>Rodrigo Abraham Maydana Carrillo</p>
-                            <p>Joseline Mendez Palli</p>
-                            <p>Valeria Janine Mercado Soliz</p>
-                            <p>Elvia Lorena Nina Macuchapi</p>
-                            <p>Maria Fernanda Pacari Paxi</p>
-                            <p>Yesica Lucy Palli Quispe</p>
-                            <p>Brandon Henry Paz Ticona</p>
-                            <p>Jose Luis Peralta Cuellar</p>
-                            <p>Elizabeth Daniela Perez Patzi</p>
-                            <p>Juan Carlos Pilco Almoguera</p>
-                            <p>Alvaro Daniel Pineda Quispe</p>
-                            <p>Ivan Rodrigo Poma Choque</p>
-                            <p>Brandon Ricardo Quisbert Yujra</p>
-                            <p>Maria Fernanda Quispe Jimenez</p>
-                            <p>Edgar Yamil Quispe Lliulli</p>
-                            <p>Carla Adriana Quispe Quenallata</p>
-                            <p>Ana Patricia Rivero Atahuachi</p>
-                            <p>Joar Daynor Salinas Ramos</p>
-                            <p>Joselin Sanca Tinta</p>
-                            <p>Anabel Gabriela Saravia Salinas</p>
-                            <p>Jorge Luis Sequeiros Rojas</p>
-                            <p>Roger Fernando Vargas Mendoza</p>
-                            <p>Alexia Dinorha Vidaurre Ramirez</p>
-                            <p>Leheydy Damaris Yujra Amaru</p>
-                            <p>Melany Dayana Yupanqui Mamani</p>
-                            <p>Elvira Zabala Brañez</p>
-                            <p>Alvaro Javier Zeballos Aguilar</p>
-                            <p>Anibal Santiago Zurita Balderrama</p>
-                            <p>Aida Lisbeth Pillco Aruquipa</p>
-                        </div>
-                      </div>
+                    <div class="column">
+                        <p>Aaron Saul Alcazar Da Silva</p>
+                        <p>Clara Aydee Aliaga Apaza</p>
+                        <p>Lilian Raquel Alvarado Benitez</p>
+                        <p>Sergio Eduardo Apaza Colque</p>
+                        <p>Oscar Henry Apaza Mamani</p>
+                        <p>Carla Andrea Arratia Arratia</p>
+                        <p>Alex Aruquipa Vargas</p>
+                        <p>Alvaro Fernando Barradas Yujra</p>
+                        <p>Noelia Carol Bonifacio Pomacosi</p>
+                        <p>Emmanuel Ruben Callejas Escobar</p>
+                        <p>Lizeth Calle Ramos</p>
+                        <p>Elim Abigail Coaquira Ramos</p>
+                        <p>Luis Oscar Coarite Mamani</p>
+                        <p>Ruddy Guery Coarite Quelali</p>
+                        <p>Ana Luisa Condori Blanco</p>
+                        <p>Javier Osvaldo Cruz Alarcon</p>
+                        <p>Madeline Cuevas Escarzo</p>
+                        <p>Hander Willyams Cuno Luque</p>
+                        <p>Norman Gerardo Diaz Paco</p>
+                        <p>Manuel Antonio Espejo Rios</p>
+                        <p>Adrian Fabricio Fernandez Nuñez</p>
+                        <p>Jhonatan Jorge Flores Condori</p>
+                        <p>Estrella Libertad Flores Lima</p>
+                        <p>Mikaela Aleida Gutierrez Millares</p>
+                        <p>Carla Helguero Tapia</p>
+                        <p>Brayan Huanca Moncada</p>
+                        <p>Julio Enrique Ilaquita Carlo</p>
+                        <p>Bryan Gerzon Illanes Campos</p>
+                        <p>Christian Eiver Larico Ramos</p>
+                        <p>Edgar Felipe Laura Carrillo</p>
+                        <p>Herlan Limachi Apaza</p>
+                        <p>Jhoseline Machaca Mamani</p>
+                        <p>Brayam Hector Mallcu Huaquipa</p>
+                    </div>
+
+                    <div class="column">
+                        <p>Yuli Estefani Mamani Apaz</p>
+                        <p>Aleyda Mamani Lequipe</p>
+                        <p>Martin Clemente Mamani Merlo</p>
+                        <p>Linden Mamani Quispe</p>
+                        <p>Miriam Grecia Mamani Quispe</p>
+                        <p>Edgar Ruddy Matias Aranibar</p>
+                        <p>Rodrigo Abraham Maydana Carrillo</p>
+                        <p>Joseline Mendez Palli</p>
+                        <p>Valeria Janine Mercado Soliz</p>
+                        <p>Elvia Lorena Nina Macuchapi</p>
+                        <p>Maria Fernanda Pacari Paxi</p>
+                        <p>Yesica Lucy Palli Quispe</p>
+                        <p>Brandon Henry Paz Ticona</p>
+                        <p>Jose Luis Peralta Cuellar</p>
+                        <p>Elizabeth Daniela Perez Patzi</p>
+                        <p>Juan Carlos Pilco Almoguera</p>
+                        <p>Alvaro Daniel Pineda Quispe</p>
+                        <p>Ivan Rodrigo Poma Choque</p>
+                        <p>Brandon Ricardo Quisbert Yujra</p>
+                        <p>Maria Fernanda Quispe Jimenez</p>
+                        <p>Edgar Yamil Quispe Lliulli</p>
+                        <p>Carla Adriana Quispe Quenallata</p>
+                        <p>Ana Patricia Rivero Atahuachi</p>
+                        <p>Joar Daynor Salinas Ramos</p>
+                        <p>Joselin Sanca Tinta</p>
+                        <p>Anabel Gabriela Saravia Salinas</p>
+                        <p>Jorge Luis Sequeiros Rojas</p>
+                        <p>Roger Fernando Vargas Mendoza</p>
+                        <p>Alexia Dinorha Vidaurre Ramirez</p>
+                        <p>Leheydy Damaris Yujra Amaru</p>
+                        <p>Melany Dayana Yupanqui Mamani</p>
+                        <p>Elvira Zabala Brañez</p>
+                        <p>Alvaro Javier Zeballos Aguilar</p>
+                        <p>Anibal Santiago Zurita Balderrama</p>
+                        <p>Aida Lisbeth Pillco Aruquipa</p>
+                    </div>
+                </div>
 
             </div>
 
